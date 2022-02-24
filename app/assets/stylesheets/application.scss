@@ -2,8 +2,10 @@
 @import "bootstrap";
 
 *{
+
   margin: 0;
   padding: 0;
+ 
 }
 
 .navbar{
@@ -30,10 +32,18 @@
 
 html,
 body {
+
   height: 100%;
-}
-#container {
-  min-height: 100%;
+  
+  width: 100%;
+
+  color: #000;
+  overflow-x: hidden;
+  height: 100%;
+  background: linear-gradient(45deg, white 50%, #EEEEEE 50%);
+  background-repeat: repeat-y;
+
+
 }
 
 
@@ -41,19 +51,21 @@ body {
 #page-content {
 
   overflow: auto;
-  
-  padding-bottom: 100%;
-  
-  
+
 }
+
+
 
 #sticky-footer {
 
   position:relative;
   height: 100%;
+  width:100%;
   flex-shrink: none;
   background-color: black !important;
   clear:both;
+  bottom:0;
+  left:0;
 
 }
 
@@ -115,4 +127,133 @@ li{
 
 .mask{
   margin-top:  100px;
+}
+
+.card{
+   
+  border-color: black !important;
+
+  border-width: 2px;
+
+  margin-bottom: 10px;
+
+  margin: 0 auto; /* Added */
+
+  float: none; /* Added */
+
+}
+
+
+.card0 {
+  box-shadow: 0px 4px 8px 0px #757575;
+  border-radius: 10px;
+  width: 700px;
+  height: 600px;
+
+}
+
+.card1 {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 500px;
+}
+
+.logo {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: 20px;
+  margin-left: 25px
+}
+
+.image {
+  width: 300px;
+  height: 300px
+}
+
+.card2 {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  width:100%;
+  
+}
+
+.login {
+  cursor: pointer
+}
+
+.line {
+  height: 1px;
+  width: 45%;
+  background-color: #E0E0E0;
+  margin-top: 10px
+}
+
+.or {
+  width: 10%
+}
+
+.text-sm {
+  font-size: 14px !important
+}
+
+input,
+textarea {
+  padding: 10px 12px 10px 12px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  margin-top: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #2C3E50;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background-color: #ECEFF1
+}
+
+input:focus,
+textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #304FFE;
+  outline-width: 0
+}
+
+button:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline-width: 0
+}
+
+.btn-blue {
+  background-color: #304FFE;
+  width: 100%;
+  color: #fff;
+  border-radius: 6px
+}
+
+.btn-blue:hover {
+  background-color: #0D47A1;
+  cursor: pointer
+}
+
+@media screen and (max-width: 991px) {
+  .card1 {
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px
+  }
+
+  .card2 {
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0px
+  }
+}
+
+#community{
+  clear: both;
+  display: inline-block;
+  white-space: nowrap;
 }
