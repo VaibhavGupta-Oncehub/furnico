@@ -1,13 +1,4 @@
-// Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
-
-*{
-
-  margin: 0;
-  padding: 0;
- 
-}
-
 .navbar{
   background-color: black !important;
 }
@@ -30,44 +21,71 @@
   align-items: center;
 }
 
-html,
-body {
+*{
+  padding: 0;
+  margin: 0;
+}
 
+html, body{
   height: 100%;
-  
   width: 100%;
-
   color: #000;
   overflow-x: hidden;
-  height: 100%;
   background: linear-gradient(45deg, white 50%, #EEEEEE 50%);
   background-repeat: repeat-y;
-
+  display:flex; 
+  flex-direction:column; 
 
 }
 
-
-
-#page-content {
-
+#container {
+  min-height: 100%;
+  position: relative;
+  overflow: auto;
+  
+}
+#main{
   overflow: auto;
 
 }
 
-
-
-#sticky-footer {
-
-  position:relative;
-  height: 100%;
-  width:100%;
+#sticky-footer{
+  position: relative !important;
+  bottom: 0;
+  margin-top: auto;
+  clear: both;
+  width: auto;
+  height: auto;
+  overflow: hidden !important;
   flex-shrink: none;
   background-color: black !important;
-  clear:both;
-  bottom:0;
-  left:0;
-
 }
+
+#footer{
+  position: bottom !important;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+li{
+  margin-top: 5px;
+  margin-bottom:2px;
+ 
+}
+
+.jumbotron-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mask{
+  margin-top:  100px;
+}
+
+
 
 .h-divider {
   margin: auto;
@@ -113,68 +131,31 @@ body {
   border: 1px dashed #aaa;
 }
 
-li{
-  margin-top: 5px;
-  margin-bottom:2px;
- 
-}
-
-.jumbotron-image {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.mask{
-  margin-top:  100px;
-}
 
 .card{
-   
   border-color: black !important;
-
   border-width: 2px;
-
-  margin-bottom: 10px;
-
-  margin: 0 auto; /* Added */
-
-  float: none; /* Added */
-
+  margin: auto;
 }
-
 
 .card0 {
   box-shadow: 0px 4px 8px 0px #757575;
   border-radius: 10px;
-  width: 700px;
-  height: 600px;
+  width: auto;
+  height: auto;
 
 }
 
 .card1 {
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
-  height: 500px;
-}
-
-.logo {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  margin-top: 20px;
-  margin-left: 25px
-}
-
-.image {
-  width: 300px;
-  height: 300px
+  height: auto;
 }
 
 .card2 {
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
-  width:100%;
+  width:auto;
   
 }
 
@@ -189,13 +170,10 @@ li{
   margin-top: 10px
 }
 
-.or {
-  width: 10%
-}
-
 .text-sm {
   font-size: 14px !important
 }
+
 
 input,
 textarea {
@@ -240,20 +218,5 @@ button:focus {
   cursor: pointer
 }
 
-@media screen and (max-width: 991px) {
-  .card1 {
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 10px
-  }
 
-  .card2 {
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 0px
-  }
-}
 
-#community{
-  clear: both;
-  display: inline-block;
-  white-space: nowrap;
-}
