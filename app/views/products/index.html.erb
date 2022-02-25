@@ -1,1 +1,14 @@
 <h1 class="display-1 color: black text-center mt-5" > New Arrivals  </h1>
+<div class="card-group m-5">
+  <% @products.each do |product|%>
+    <div class="card" style="width: 25rem;">
+      <%= image_tag("furnitures.png", :class => "mx-auto img-circle mt-3 mb-3 ")%>
+      <div class="card-body">
+        <h5 class="card-title"><%=product.ProductName%></h5>
+        <p class="card-text"><%= product.ProductDescription%></p>
+        <p class="card-text"><%= product.ProductPrice%></p>
+        <a href="#" class="btn btn-primary">Add to Cart</a>
+      </div>
+    </div>
+  <%end%>
+</div>
