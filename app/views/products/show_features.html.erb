@@ -1,0 +1,20 @@
+<h1 class="display-1 color: black text-center mt-5" > Featured Furnitures </h1>
+
+<div class="flickr_pagination">
+  <%= will_paginate @features, :container=> false %>
+</div>
+
+<% @features.each do |feature|%>
+  <div class="card mt-5 mb-5">
+    <%= image_tag(feature.ImageName, :class => "mx-auto img-circle mt-3 mb-3 ")%>
+    <div class="card-body">
+      <h5 class="card-title"><%= feature.ProductName%></h5>
+      <p class="card-text"><%= feature.ProductDescription%></p>
+      <p class="card-text">₹- <%= feature.ProductPrice%></p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+<% end %>
