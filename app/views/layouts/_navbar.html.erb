@@ -14,12 +14,12 @@
             Furniture
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">New Arrival</a></li>
-            <li><a class="dropdown-item" href="#">Features</a></li>
+            <li><%=link_to "New Arrival", products_show_arrivals_path,class: "dropdown-item"%></li>
+            <li><%=link_to "Features", products_show_features_path,class: "dropdown-item"%></li>
           </ul>
         </li>
           <li class="nav-item ">
-          <a class="nav-link active" aria-current="page" href="#">Signup</a>
+          <%=link_to "SignUp",login_show_signup_path, class:"nav-link active" %>
         </li>
       </ul>
       <form class="d-flex mt-2 ">
