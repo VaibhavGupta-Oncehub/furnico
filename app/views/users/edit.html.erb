@@ -1,4 +1,4 @@
-<h1 id= "community" class="display-1  m-5 tr text-center"> Join Us</h1>
+<h1 id= "community" class="display-1  m-5 tr text-center"> Welcome to Edit Your User Account</h1>
 
 <% if @user.errors.any? %>
   
@@ -13,7 +13,7 @@
   </div>
 <% end %>
 
-<%= form_with(model: @user, local: true) do |f| %>
+<%= form_with(model:@user,  local: true) do |f| %>
   <div class="container-fluid justify-content-center">
     <div class="card card0 border-2 mx-auto mt-10">
       <div class="row d-flex ">
@@ -21,15 +21,13 @@
           <div class="card1 bg-light pb-5">
             <div class="row px-3 justify-content-center mt-4 mb-5"> <img src="https://i.imgur.com/ucirQQf.png" class="image"> </div>
             <div class="row px-3 text-center justify-content-center">
-              <h4>Signup to furnico</h4>
-              <small class="text-muted px-5 mx-1 mx-lg-5">Join the community of thousands of our happy customers.</small>
+              <h4>Furnico | Your Personal Furniture Destination.</h4>
             </div>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="card2 card border-0 px-4 py-5">
-            <h3 class="mb-1">Create your Furnico account.</h3>
-            <p class="mb-4 text-sm">Already have an account? <%= link_to "LogIn", login_show_login_path, class:"text-primary login"%></p>
+            <h3 class="mb-1">Edit Your Furnico account.</h3>
             <div class="row px-3">
               <div class="line"></div>
               <div class="line"></div>
@@ -39,7 +37,6 @@
                 <label class="mb-0">
                   <h6 class="mb-0 text-sm">First Name</h6>
                 </label>
-                <%# <input type="text" name="fname"> %>
                 <%= f.text_field :first_name %>
               </div>
               <div class="col-md-6">
@@ -63,7 +60,7 @@
             </div>
             <div class="row mb-4 justify-content-center">
               <div class="col-md-5"> 
-                <%= f.submit "Create Account", class:"btn btn-blue text-center mb-1" %>
+                <%= f.submit "Update Account",class:"btn btn-blue text-center mb-1", data: { confirm: "Are you sure?" } %>
               </div>
             </div>
           </div>
