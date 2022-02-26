@@ -16,7 +16,7 @@
       <a href="#" class="btn btn-primary">Add to Cart</a>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
+      <small class="text-muted">Last updated <%= time_ago_in_words(arrival.updated_at)%> ago.</small>
     </div>
   </div>
 <% end %>
