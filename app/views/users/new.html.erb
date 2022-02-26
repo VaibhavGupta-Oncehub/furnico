@@ -1,14 +1,17 @@
 <h1 id= "community" class="display-1  m-5 tr text-center"> Join Us</h1>
 
 <% if @user.errors.any? %>
-  <h2 class="display-2  m-5 tr text-center"> Please resolve the following errors</h2>
-
-  <ul class="mb-5">
-    <% @user.errors.full_messages.each do |message| %>
-      <li> <%= message %> </li>
-    <%end%>
-  </ul>
-<% end%>
+  
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <h2 class="alert-heading"> Please resolve the following errors</h2>
+    <ul class="mb-5">
+      <% @user.errors.full_messages.each do |message| %>
+        <li> <%= message %> </li>
+      <%end%>
+    </ul>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
 
 <%= form_with scope: :user, url: users_path, local: true do |f| %>
   <div class="container-fluid justify-content-center">
