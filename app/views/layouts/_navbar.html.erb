@@ -23,8 +23,14 @@
         </li>
         
         <% if logged_in? %>
-           <li class="nav-item ">
-            <%=link_to (current_user.first_name + ' ' + current_user.last_name).capitalize(), user_path(current_user), class:"nav-link active"%>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Profile[<%= (current_user.first_name + ' ' + current_user.last_name).capitalize()%>]
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><%=link_to "View Your Profile",user_path(current_user),class: "dropdown-item"%></li>
+              <li><%=link_to "Edit Your Profile", edit_user_path(current_user),class: "dropdown-item"%></li>
+            </ul>
           </li>
           <li class="nav-item ">
             <%=link_to "Logout",logout_path, class:"nav-link active", method: :delete %>
