@@ -13,7 +13,12 @@
 
     <div id= "nav"><%= render "layouts/navbar"%></div>
     <div class="container">
-      <div id= "main"><%= yield %></div>
+      <div id= "main">
+      <% flash.each do |name, message|%>
+        <h2 class="display-2  m-5 tr text-center"><%=message%></h2>
+      <%end%>
+      <%= yield %>
+      </div>
       <div id="footer"> <%= render "layouts/footer"%> </div> 
     </div>
     
