@@ -12,7 +12,10 @@ class UsersController < ApplicationController
   end
 
   def create 
-    if  @user= User.create(user_params)
+    
+    @user=User.new(user_params)
+
+    if  @user.save
       session[:user_id] = @user.id
       flash[:notice] ="#{(current_user.first_name + ' ' + current_user.last_name).capitalize()} has been successfully created."
       redirect_to user_path(@user)
@@ -44,12 +47,13 @@ class UsersController < ApplicationController
   end
 
   def add_to_cart
+    
     @add_to_cart_product= Product.find_by(:id => params[:product_id])
 
     if logged_in?
       current_user.products << @add_to_cart_product
       flash[:alert] = "#{@add_to_cart_product.ProductName} has been added to your cart."
-      redirect_to products_show_arrivals_url
+      redirect_to user_path(current_user)
     else
       # current user is nil and not logged in
       flash[:notice ] = "Please login to add items to cart."

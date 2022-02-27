@@ -11,7 +11,11 @@
       <h5 class="card-title"><%= feature.ProductName%></h5>
       <p class="card-text"><%= feature.ProductDescription%></p>
       <p class="card-text">₹- <%= feature.ProductPrice%></p>
-      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+    <div class="text-white text-center mb-5">
+      <%= form_with(url:products_show_arrivals_path , method: "post",local: true) do |f| %>
+        <%= f.button "Add to Cart" ,class: "btn btn-success w-25", name:"product_id",value: feature.id %>
+      <%end%>
     </div>
     <div class="card-footer">
       <small class="text-muted">Last updated <%= time_ago_in_words(feature.updated_at)%> ago .</small>
