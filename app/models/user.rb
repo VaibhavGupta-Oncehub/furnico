@@ -2,7 +2,7 @@ class User < ApplicationRecord
   
   before_save :format_email
   before_create :encrypt_password
-  has_many :products, dependent: :destroy
+  has_many :products
   validates :first_name, presence: true,length: {minimum: 3, maximum:25}
   validates :last_name, presence: true, length: {minimum: 3, maximum:25}
   VALID_EMAIL_REGEX= /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

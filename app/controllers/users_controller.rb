@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show,:edit, :update, :destroy]
   before_action :require_user, only: [:edit, :update]
   before_action :require_same_user, only: [:edit, :update, :destroy]
+    
 
   def index
     @users= User.all.paginate(page: params[:page], per_page: 3)
@@ -22,9 +23,11 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+
   end
   
   def show
+   
   end
 
   def edit
@@ -46,10 +49,10 @@ class UsersController < ApplicationController
     redirect_to users_path 
   end
 
-  def add_to_cart
-    
-    @add_to_cart_product= Product.find_by(:id => params[:product_id])
+  
 
+  def add_to_cart
+    @add_to_cart_product= Product.find_by(:id => params[:product_id])
     if logged_in?
       current_user.products << @add_to_cart_product
       flash[:alert] = "#{@add_to_cart_product.ProductName} has been added to your cart."
@@ -60,9 +63,18 @@ class UsersController < ApplicationController
       redirect_to login_show_login_path
 
     end
-      
-    
+  end
 
+  def remove_from_cart
+    @remove_from_cart_product= Product.find_by(:id => params[:product_id])
+    if logged_in?
+      current_user.products.delete(@remove_from_cart_product.id)
+      flash[:alert] = "#{@remove_from_cart_product.ProductName} has been removed from your cart."
+      redirect_to user_path(current_user)
+    else
+      flash[:notice ] = "Please login to remove items from cart."
+      redirect_to login_show_login_path
+    end
   end
   
   private 

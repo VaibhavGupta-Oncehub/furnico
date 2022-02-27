@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post 'products/show_arrivals', to: 'users#add_to_cart'
   post 'products/show_features', to: 'users#add_to_cart'
 
+  delete '/remove_from_cart', to: 'users#remove_from_cart'
+
   
 
 end
