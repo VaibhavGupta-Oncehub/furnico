@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
 
-  get 'products/show_arrivals'
-  get 'products/show_features'
+  get 'products/show_arrivals', to: 'products#show_arrivals'
+  get 'products/show_features', to: 'products#show_features'
 
   
 
