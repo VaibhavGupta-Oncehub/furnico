@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show,:edit, :update, :destroy]
-  before_action :require_user, only: [:edit, :update ]
+  before_action :require_user, only: [:edit, :update]
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
@@ -41,6 +41,24 @@ class UsersController < ApplicationController
     session[:user_id] =  nil if @user ==current_user
     flash[:notice] = "The Furnico account #{(@user.first_name + @user.last_name).capitalize()} has been deleted and cart items have been cleared."
     redirect_to users_path 
+  end
+
+  def add_to_cart
+    @add_to_cart_product= Product.find_by(:id => params[:product_id])
+
+    if logged_in?
+      current_user.products << @add_to_cart_product
+      flash[:alert] = "#{@add_to_cart_product.ProductName} has been added to your cart."
+      redirect_to products_show_arrivals_url
+    else
+      # current user is nil and not logged in
+      flash[:notice ] = "Please login to add items to cart."
+      redirect_to login_show_login_path
+
+    end
+      
+    
+
   end
   
   private 

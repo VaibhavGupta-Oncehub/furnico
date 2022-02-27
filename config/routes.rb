@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get 'products/show_arrivals', to: 'products#show_arrivals'
   get 'products/show_features', to: 'products#show_features'
 
+  post 'products/show_arrivals', to: 'users#add_to_cart'
+  post 'products/show_features', to: 'users#add_to_cart'
+
   
 
 end

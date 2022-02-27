@@ -1,6 +1,6 @@
 <h1 id= "community" class="display-1  m-5 tr text-center"> Login to Furnico </h1>
 
-<%= form_with(scpe: :session, url: login_show_login_path, method: "post",local: true) do |f| %>
+<%= form_with(scope: :session, url: login_show_login_path, method: "post",local: true) do |f| %>
   <div class="container-fluid justify-content-center">
     <div class="card card0 border-2 mx-auto mt-10">
       <div class="row d-flex ">
