@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   
-  before_save :format_email, :encrypt_password
+  before_save :format_email
+  before_create :encrypt_password
   has_many :products, dependent: :destroy
   validates :first_name, presence: true,length: {minimum: 3, maximum:25}
   validates :last_name, presence: true, length: {minimum: 3, maximum:25}
@@ -17,5 +18,6 @@ class User < ApplicationRecord
   def format_email
     self.email= email.downcase
   end
+
 
 end

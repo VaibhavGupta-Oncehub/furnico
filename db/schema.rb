@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_26_065443) do
+ActiveRecord::Schema.define(version: 2022_02_27_055834) do
 
   create_table "products", force: :cascade do |t|
     t.string "ProductName"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2022_02_26_065443) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.boolean "admin", default: false
   end
 
 end

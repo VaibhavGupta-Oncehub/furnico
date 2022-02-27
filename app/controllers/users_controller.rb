@@ -12,10 +12,9 @@ class UsersController < ApplicationController
   end
 
   def create 
-    @user= User.new(user_params)
-    if @user.save
+    if  @user= User.create(user_params)
       session[:user_id] = @user.id
-      flash[:notice] ="User has been successfully created."
+      flash[:notice] ="#{(current_user.first_name + ' ' + current_user.last_name).capitalize()} has been successfully created."
       redirect_to user_path(@user)
     else
       render 'new'
@@ -30,7 +29,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:notice] = "User Info has been updated"
+      flash[:notice] = "#{(current_user.first_name + ' ' + current_user.last_name).capitalize()} Info has been updated"
       redirect_to @user
     else
       render 'edit'
@@ -39,9 +38,9 @@ class UsersController < ApplicationController
   
   def destroy
     @user.destroy
-    session[:user_id] = nil
-    flash[:notice] = "Your Furnico account has been deleted and cart items have been cleared."
-    redirect_to users_path
+    session[:user_id] =  nil if @user ==current_user
+    flash[:notice] = "The Furnico account #{(@user.first_name + @user.last_name).capitalize()} has been deleted and cart items have been cleared."
+    redirect_to users_path 
   end
   
   private 
@@ -54,7 +53,7 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @user
+    if current_user != @user && !current_user.admin?
       flash[:alert] = "You can edit your own account."
       redirect_to @user
     end

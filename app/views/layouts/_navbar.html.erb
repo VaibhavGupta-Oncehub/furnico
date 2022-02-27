@@ -25,12 +25,12 @@
         <% if logged_in? %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Profile[<%= (current_user.first_name + ' ' + current_user.last_name).capitalize()%>]
+              <%="(Admin)" if current_user.admin?%> Profile[ <%= (current_user.first_name + ' ' + current_user.last_name).capitalize()%> ]
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><%=link_to "View Your Profile",user_path(current_user),class: "dropdown-item"%></li>
               <li><%=link_to "Edit Your Profile", edit_user_path(current_user),class: "dropdown-item"%></li>
-              <li><%=link_to "Delete Your Profile", user_path(current_user),class: "dropdown-item bg-danger text-white", method: :delete , data: {confirm: "Are you sure you want to delete?" }%></li>
+              <li><%=link_to "Delete Your Profile", user_path(current_user),class: "dropdown-item bg-danger text-white", method: :delete , data: {confirm: "Are you sure you want to delete #{(current_user.first_name + ' ' + current_user.last_name).capitalize()}'s Furnico Account?" }%></li>
             </ul>
           </li>
           <li class="nav-item ">

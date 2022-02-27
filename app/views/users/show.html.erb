@@ -11,8 +11,8 @@
                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                 <div class="mt-3">
                   <h4><%= (@user.first_name + ' ' + @user.last_name).capitalize() %></h4><hr>
-                  <% if logged_in? && @user == current_user %>
-                    <%=link_to "Delete Your Profile", user_path(current_user),class: "btn btn-danger", method: :delete , data: {confirm: "Are you sure you want to delete?" }%>
+                  <% if logged_in? && (@user == current_user || current_user.admin?) %>
+                    <%=link_to "Delete Your Profile", user_path(@user),class: "btn btn-danger", method: :delete , data: {confirm: "Are you sure you want to delete #{(@user.first_name + ' ' + @user.last_name).capitalize()}'s Furnico Account?" }%>
                   <%end%>
                 </div>
               </div>
@@ -51,7 +51,7 @@
               <hr>
               <div class="row mt-5 mb-4">
                 <div class="col-sm-12">
-                  <% if logged_in? && @user == current_user%>
+                  <% if logged_in? && (@user == current_user || current_user.admin?) %>
                     <%= link_to "Edit Details",edit_user_path(@user),class: "btn btn-info"%>
                   <%end%>
                 </div>

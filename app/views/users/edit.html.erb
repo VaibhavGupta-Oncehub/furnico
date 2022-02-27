@@ -1,4 +1,4 @@
-<h1 id= "community" class="display-1  m-5 tr text-center"> Welcome to Edit Your User Account</h1>
+<h1 id= "community" class="display-1  m-5 tr text-center"> Welcome to Edit <%=(@user.first_name + ' ' + @user.last_name).capitalize()%>'s Furnico Account </h1>
 
 <% if @user.errors.any? %>
   
