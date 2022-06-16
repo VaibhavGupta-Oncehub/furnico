@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_27_055834) do
+ActiveRecord::Schema.define(version: 2022_02_26_062645) do
 
   create_table "products", force: :cascade do |t|
     t.string "ProductName"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2022_02_27_055834) do
     t.string "ImageName"
     t.integer "user_id"
   end
-
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -32,5 +31,6 @@ ActiveRecord::Schema.define(version: 2022_02_27_055834) do
     t.string "password_digest"
     t.boolean "admin", default: false
   end
+
 
 end
