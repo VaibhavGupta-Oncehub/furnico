@@ -2,7 +2,8 @@
 
 Disclaimer: This project was made for learning purposes. I don't own any images, logos and design templates etc., used in this project in any form.
 
-# Furnico | Personal Furniture Destination is a e-ecommerce funiture platforms that provides stylish and modern furniture to the customer.
+# Furnico | Personal Furniture Destination
+Furnico is a e-ecommerce funiture platforms that provides stylish and modern furniture to the customer.
 
 ![image](https://user-images.githubusercontent.com/98082102/174546624-ab7e1bac-9a5b-44cd-845b-661f7e134c5e.png)
 
