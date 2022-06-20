@@ -7,6 +7,9 @@ Furnico is an e-ecommerce funiture platforms that provides stylish and modern fu
 
 ![image](https://user-images.githubusercontent.com/98082102/174546624-ab7e1bac-9a5b-44cd-845b-661f7e134c5e.png)
 
+![image](https://user-images.githubusercontent.com/98082102/174550080-986ec2e7-ab81-43c8-a95b-2c92fdf070ff.png)
+
+
 ## Features of Furnico Platform
 
 * Devise Gem Authentication System
