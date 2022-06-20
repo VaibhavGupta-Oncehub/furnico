@@ -20,8 +20,10 @@ Furnico is an e-ecommerce funiture platforms that provides stylish and modern fu
   ## Sign Up Page
   ![image](https://user-images.githubusercontent.com/98082102/174547153-a1e3f813-3828-4807-8817-e43648dc7a94.png)
 
-* Furnico Community
+* Furnico Community:
+
   Furnico provides a community of people where users can interact with other people on furnico platform and can view their products in read-only mode.
+
   1. ![image](https://user-images.githubusercontent.com/98082102/174547794-0c7c81dc-7470-4852-af5c-573f3df92b6d.png)
   
   2. ![image](https://user-images.githubusercontent.com/98082102/174547955-f5fb327a-0cde-4047-895f-bb4710b8a652.png)
